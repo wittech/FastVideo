@@ -89,10 +89,12 @@ prerelease = "allow"
 torch = [
   { index = "pytorch-cpu", marker = "sys_platform != 'linux'" },
   { index = "pytorch-cu128", marker = "sys_platform == 'linux'" },
+  { index = "pytorch-cu130", marker = "sys_platform == 'linux'" },
 ]
 torchvision = [
   { index = "pytorch-cpu", marker = "sys_platform != 'linux'" },
   { index = "pytorch-cu128", marker = "sys_platform == 'linux'" },
+  { index = "pytorch-cu130", marker = "sys_platform == 'linux'" },
 ]
 
 [[tool.uv.index]]
@@ -105,10 +107,14 @@ name = "pytorch-cu128"
 url = "https://download.pytorch.org/whl/cu128"
 explicit = true
 
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
 [project.optional-dependencies]
 
-# flash-attn: pip install flash-attn==2.8.1 --no-cache-dir --no-build-isolation
-
+# flash-attn: pip install flash-attn==2.8.3 --no-cache-dir --no-build-isolation
 
 lint = [
     "pre-commit==4.0.1",
